@@ -1,36 +1,3 @@
-
-let choices = ["rock", "paper", "scissors"]
-
-//NOTE will take in playersChoice between rock/paper/scissors
-function play(choices) {
-  let playerChoice = choices
-  console.log(playerChoice);
-  let computerChoice = computerChoices()
-  console.log(computerChoice);
-  
-  if (playerChoice == "rock" && computerChoice == "rock" || playerChoice == "paper" && computerChoice == "paper" || playerChoice == "scissors" && computerChoice == "scissors") {
-    alert("You've Tied!")
-  }
-  if (playerChoice == "rock" && computerChoice == "scissors" || playerChoice == "paper" && computerChoice == "rock" || playerChoice == "scissors" && computerChoice == "paper") {
-    alert("You Won!")
-  }
-  if (computerChoice == "rock" && playerChoice == "scissors" || computerChoice == "paper" && playerChoice == "rock" || computerChoice == "scissors" && playerChoice == "paper") {
-    alert("You've Lost")
-  }
-}
-
-function computerChoices () {
-  return choices[Math.floor(Math.random()* choices.length)]
-}
-
-
-
-
-
-
-
-
-
 let player1 = {
   name: "JimBob",
   roshambo: [
@@ -66,6 +33,74 @@ let computer = {
     },
   ],
 }
+
+let choices = ["rock", "paper", "scissors"]
+
+  function playerPhotos(choices) {
+    let playerChoice = choices
+    let rpsPlayerElem = document.getElementById("rps-player-image")
+  
+    //playerChoicePhotos
+    
+    if (playerChoice == "rock") {
+      return rpsPlayerElem.src = player1.roshambo[0].img 
+    }
+    if (playerChoice == "paper") {
+      return rpsPlayerElem.src = player1.roshambo[1].img 
+    }
+    if (playerChoice == "scissors") {
+      return rpsPlayerElem.src = player1.roshambo[2].img 
+    }
+    
+  }
+
+  function computerPhotos () {
+    let computerChoice = computerChoices()
+    let rpsComputerElem = document.getElementById("rps-computer-image")
+
+    //computerChoicePhotos
+    
+if (computerChoice == "rock") {
+  return rpsComputerElem.src = computer.roshambo[0].img
+}
+if (computerChoice == "paper") {
+  return rpsComputerElem.src = computer.roshambo[1].img
+}
+if (computerChoice == "scissors") {
+  return rpsComputerElem.src = computer.roshambo[2].img
+}
+
+  }
+//NOTE will take in playersChoice & compare it to computerChoice between rock/paper/scissors
+function play(choices) {
+  let playerChoice = choices
+  console.log(playerChoice);
+  let computerChoice = computerChoices()
+  console.log(computerChoice);
+
+  //algorithm
+  playerphotos()
+  computerPhotos()
+
+  if (playerChoice == "rock" && computerChoice == "rock" || playerChoice == "paper" && computerChoice == "paper" || playerChoice == "scissors" && computerChoice == "scissors") {
+    alert("You've Tied!")
+  }
+  if (playerChoice == "rock" && computerChoice == "scissors" || playerChoice == "paper" && computerChoice == "rock" || playerChoice == "scissors" && computerChoice == "paper") {
+    alert("You Won!")
+  }
+  if (computerChoice == "rock" && playerChoice == "scissors" || computerChoice == "paper" && playerChoice == "rock" || computerChoice == "scissors" && playerChoice == "paper") {
+    alert("You Lost")
+  }
+}
+
+function computerChoices () {
+  return choices[Math.floor(Math.random()* choices.length)]
+}
+
+
+
+
+
 
 // function dontworry() {
 //   let playerRockElem = document.getElementById("btn-rock")
