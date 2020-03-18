@@ -1,3 +1,36 @@
+
+let choices = ["rock", "paper", "scissors"]
+
+//NOTE will take in playersChoice between rock/paper/scissors
+function play(choices) {
+  let playerChoice = choices
+  console.log(playerChoice);
+  let computerChoice = computerChoices()
+  console.log(computerChoice);
+  
+  if (playerChoice == "rock" && computerChoice == "rock" || playerChoice == "paper" && computerChoice == "paper" || playerChoice == "scissors" && computerChoice == "scissors") {
+    alert("You've Tied!")
+  }
+  if (playerChoice == "rock" && computerChoice == "scissors" || playerChoice == "paper" && computerChoice == "rock" || playerChoice == "scissors" && computerChoice == "paper") {
+    alert("You Won!")
+  }
+  if (computerChoice == "rock" && playerChoice == "scissors" || computerChoice == "paper" && playerChoice == "rock" || computerChoice == "scissors" && playerChoice == "paper") {
+    alert("You've Lost")
+  }
+}
+
+function computerChoices () {
+  return choices[Math.floor(Math.random()* choices.length)]
+}
+
+
+
+
+
+
+
+
+
 let player1 = {
   name: "JimBob",
   roshambo: [
@@ -33,32 +66,6 @@ let computer = {
     },
   ],
 }
-
-//NOTE will take in playersChoice between rock/paper/scissors
-function play(playerChoice) {
- console.log("playerChoice", playerChoice);
-let computerChoice = Math.floor(Math.random()*3)
-console.log("computerChoice", computerChoice);
-
-  if (playerChoice == computerChoice) {
-    console.log("tie");
-}
-  if (computerChoice > playerChoice) {
-    console.log("lose");
-  }
-  if (playerChoice > computerChoice) {
-    console.log("win");
-  }
-}
-
-
-
-
-
-
-
-
-
 
 // function dontworry() {
 //   let playerRockElem = document.getElementById("btn-rock")

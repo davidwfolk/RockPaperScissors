@@ -28,9 +28,9 @@
           <div class='col-12 col-md-4 mr-auto p-3'>
             <img class = "img-fluid" src='https://place-hold.it/300x300'>
             <h1 class='p1-name text-center'>Player 1 </h1>
-            <button class="btn btn-primary align-items-center" onclick='play(0)' >Rock</button>
-            <button class="btn btn-primary align-items-center" onclick='play(1)' >Paper</button>
-            <button class="btn btn-primary align-items-center" onclick='play(2)' >Scissors</button>
+            <button class="btn btn-primary align-items-center" onclick='play("rock")'>Rock</button>
+            <button class="btn btn-primary align-items-center" onclick='play("paper")'>Paper</button>
+            <button class="btn btn-primary align-items-center" onclick='play("scissors")'>Scissors</button>
           </div>
           <div class='col-12 col-md-1 m-auto p-3'>
           <button id='play' class='btn btn-primary'>Play</button>
@@ -50,7 +50,7 @@
       <div class='container'>
         <div class='row text-center'>
           <div class='col-12'>
-            <h1 class="winner">The Winner is:<span ></span></h1>
+            <h1 id="rps-winner" class="winner">The Winner is:<span ></span></h1>
           </div>
           <div class='col'>
           </div>
