@@ -33,3 +33,49 @@ let computer = {
     },
   ],
 }
+
+//NOTE will take in playersChoice between rock/paper/scissors
+function play(playerChoice) {
+ console.log("playerChoice", playerChoice);
+let computerChoice = Math.floor(Math.random()*3)
+console.log("computerChoice", computerChoice);
+
+  if (playerChoice == computerChoice) {
+    console.log("tie");
+}
+  if (computerChoice > playerChoice) {
+    console.log("lose");
+  }
+  if (playerChoice > computerChoice) {
+    console.log("win");
+  }
+}
+
+
+
+
+
+
+
+
+
+
+// function dontworry() {
+//   let playerRockElem = document.getElementById("btn-rock")
+//   let playerPaperElem = document.getElementById("btn-paper")
+//   let playerScissorsElem = document.getElementById("btn-scissors")
+//   let rpsElem = document.getElementById("rps-image")
+
+
+//   if (playerRockElem) {
+//     return player1.roshambo[0].img
+//   }
+//   else if (playerPaperElem) {
+//     return player1.roshambo[1].img
+//   }
+//   else if (playerScissorsElem) {
+//     return player1.roshambo[2].img
+//   }
+//   console.log(play)
+// }
+
