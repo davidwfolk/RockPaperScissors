@@ -16,28 +16,27 @@ let player1 = {
   ],
 }
 
-let computer = {
-  name: "computer",
-  roshambo: [
-    {
-      img: "https://upload.wikimedia.org/wikipedia/commons/7/7e/Rock-paper-scissors_%28rock%29.png",
-        status: "rock",
-      },
-      {
-      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Rock-paper-scissors_%28paper%29.png/1200px-Rock-paper-scissors_%28paper%29.png",
-        status: "paper",
-      },
-      {
-      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Rock-paper-scissors_%28scissors%29.png/600px-Rock-paper-scissors_%28scissors%29.png",
-        status: "scissors",
-    },
-  ],
-}
+// let computer = {
+//   name: "computer",
+//   roshambo: [
+//     {
+//       img: "https://upload.wikimedia.org/wikipedia/commons/7/7e/Rock-paper-scissors_%28rock%29.png",
+//         status: "rock",
+//       },
+//       {
+//       img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Rock-paper-scissors_%28paper%29.png/1200px-Rock-paper-scissors_%28paper%29.png",
+//         status: "paper",
+//       },
+//       {
+//       img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Rock-paper-scissors_%28scissors%29.png/600px-Rock-paper-scissors_%28scissors%29.png",
+//         status: "scissors",
+//     },
+//   ],
+// }
 
 let choices = ["rock", "paper", "scissors"]
 
-  function playerPhotos(choices) {
-    let playerChoice = choices
+  function playerPhotos(playerChoice) {
     let rpsPlayerElem = document.getElementById("rps-player-image")
   
     //playerChoicePhotos
@@ -54,20 +53,19 @@ let choices = ["rock", "paper", "scissors"]
     
   }
 
-  function computerPhotos () {
-    let computerChoice = computerChoices()
+  function computerPhotos(computerChoice) {
     let rpsComputerElem = document.getElementById("rps-computer-image")
 
     //computerChoicePhotos
     
 if (computerChoice == "rock") {
-  return rpsComputerElem.src = computer.roshambo[0].img
+  return rpsComputerElem.src = player1.roshambo[0].img
 }
 if (computerChoice == "paper") {
-  return rpsComputerElem.src = computer.roshambo[1].img
+  return rpsComputerElem.src = player1.roshambo[1].img
 }
 if (computerChoice == "scissors") {
-  return rpsComputerElem.src = computer.roshambo[2].img
+  return rpsComputerElem.src = player1.roshambo[2].img
 }
 
   }
@@ -76,28 +74,34 @@ function play(choices) {
   let playerChoice = choices
   console.log(playerChoice);
   let computerChoice = computerChoices()
+  computerPhotos(computerChoice)
+  playerPhotos(playerChoice)
   console.log(computerChoice);
+  let result = "Hmm..."
 
   //algorithm
-  playerphotos()
-  computerPhotos()
 
   if (playerChoice == "rock" && computerChoice == "rock" || playerChoice == "paper" && computerChoice == "paper" || playerChoice == "scissors" && computerChoice == "scissors") {
-    alert("You've Tied!")
+    result = "You've Tied!"
   }
   if (playerChoice == "rock" && computerChoice == "scissors" || playerChoice == "paper" && computerChoice == "rock" || playerChoice == "scissors" && computerChoice == "paper") {
-    alert("You Won!")
+    result = "You Won!"
   }
   if (computerChoice == "rock" && playerChoice == "scissors" || computerChoice == "paper" && playerChoice == "rock" || computerChoice == "scissors" && playerChoice == "paper") {
-    alert("You Lost")
+      result =  "You Lost"
   }
+  draw(result)
+  return result
 }
 
 function computerChoices () {
   return choices[Math.floor(Math.random()* choices.length)]
 }
 
-
+function draw(winnertext) {
+  let resultElem = document.getElementById("rps-winner")
+  resultElem.innerText = winnertext
+}
 
 
 
