@@ -16,8 +16,8 @@ let player1 = {
   ],
 }
 
-let player2 = {
-  name: "JimBob",
+let computer = {
+  name: "computer",
   roshambo: [
     {
       img: "https://upload.wikimedia.org/wikipedia/commons/7/7e/Rock-paper-scissors_%28rock%29.png",
